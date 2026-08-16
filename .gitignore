@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# Build outputs
+dist/
+build/
+*.egg-info/
+
+# Environment and local configs
+.env
+.env.local
+.DS_Store
+*.log
+
+# IDE
+.idea/
+.vscode/
