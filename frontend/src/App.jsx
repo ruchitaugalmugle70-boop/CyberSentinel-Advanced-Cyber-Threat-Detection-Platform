@@ -8,6 +8,11 @@ import RepoSecurityScanner from './components/RepoSecurityScanner';
 import NetworkMonitor from './components/NetworkMonitor';
 import AlertHistory from './components/AlertHistory';
 import Settings from './components/Settings';
+import MitreMatrixView from './components/MitreMatrixView';
+import ComplianceReporter from './components/ComplianceReporter';
+import YaraSandbox from './components/YaraSandbox';
+import IncidentPlaybooks from './components/IncidentPlaybooks';
+import SystemAuditView from './components/SystemAuditView';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -24,6 +29,16 @@ export default function App() {
         return <RepoSecurityScanner />;
       case 'network':
         return <NetworkMonitor />;
+      case 'mitre':
+        return <MitreMatrixView />;
+      case 'compliance':
+        return <ComplianceReporter />;
+      case 'yara':
+        return <YaraSandbox />;
+      case 'playbooks':
+        return <IncidentPlaybooks />;
+      case 'system_audit':
+        return <SystemAuditView />;
       case 'alerts':
         return <AlertHistory />;
       case 'settings':
