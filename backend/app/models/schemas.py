@@ -107,3 +107,32 @@ class DashboardStatsResponse(BaseModel):
     securityScore: Dict[str, Any]
     vulnerabilities: Dict[str, Any]
     distribution: List[Dict[str, Any]]
+
+# MITRE ATT&CK Models
+class MitreMapRequest(BaseModel):
+    threat_type: str = Field(..., description="Threat type e.g. spyware, sqli, repo, network")
+    threat_data: Optional[Dict[str, Any]] = None
+
+# YARA Sandbox Models
+class YaraScanRequest(BaseModel):
+    payload: str = Field(..., description="Binary hex payload, string, or source code to analyze")
+
+class YaraRuleCreateRequest(BaseModel):
+    rule_name: str
+    pattern: str
+    description: str
+    severity: Optional[str] = "HIGH"
+
+# Incident Response Models
+class PlaybookGenerateRequest(BaseModel):
+    category: str = Field(..., description="Category e.g. spyware, sqli, repo, network")
+    target_ip: Optional[str] = "192.168.1.105"
+    process_name: Optional[str] = "netd_agent"
+    c2_domain: Optional[str] = "pegasus-telemetry.org"
+
+# Compliance Exporter Models
+class ComplianceExportRequest(BaseModel):
+    total_threats: int = 5
+    critical: int = 1
+    high: int = 2
+    medium: int = 2
