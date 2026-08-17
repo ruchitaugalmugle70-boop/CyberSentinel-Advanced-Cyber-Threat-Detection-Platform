@@ -7,7 +7,12 @@ from .api.v1.endpoints import (
     repo,
     network,
     alerts,
-    health
+    health,
+    mitre,
+    compliance,
+    yara,
+    playbooks,
+    system_audit
 )
 
 app = FastAPI(
@@ -35,6 +40,11 @@ app.include_router(repo.router, prefix=settings.API_V1_STR)
 app.include_router(network.router, prefix=settings.API_V1_STR)
 app.include_router(alerts.router, prefix=settings.API_V1_STR)
 app.include_router(health.router, prefix=settings.API_V1_STR)
+app.include_router(mitre.router, prefix=settings.API_V1_STR)
+app.include_router(compliance.router, prefix=settings.API_V1_STR)
+app.include_router(yara.router, prefix=settings.API_V1_STR)
+app.include_router(playbooks.router, prefix=settings.API_V1_STR)
+app.include_router(system_audit.router, prefix=settings.API_V1_STR)
 
 @app.get("/")
 def root():
