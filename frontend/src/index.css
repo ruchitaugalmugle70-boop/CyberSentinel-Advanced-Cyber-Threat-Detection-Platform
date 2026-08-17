@@ -1276,3 +1276,129 @@ body {
     padding: 16px;
   }
 }
+
+/* ── CyberSentinel Extended CSS ── */
+.mitre-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.mitre-column {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px;
+}
+
+.tactic-header {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  color: var(--cyan);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.technique-card {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.technique-card:hover {
+  border-color: var(--cyan);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-cyan);
+}
+
+.technique-card.severity-critical {
+  border-left: 3px solid var(--red);
+}
+
+.technique-card.severity-high {
+  border-left: 3px solid var(--amber);
+}
+
+.technique-card.severity-medium {
+  border-left: 3px solid var(--purple);
+}
+
+.badge-id {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  background: var(--cyan-dim);
+  color: var(--cyan);
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid var(--cyan-glow);
+}
+
+.tech-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 4px;
+}
+
+.code-box {
+  background: #040814;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #a0aec0;
+  overflow-x: auto;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 8, 20, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-content {
+  background: var(--bg-secondary);
+  border: 1px solid var(--cyan);
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.2);
+  border-radius: var(--radius-lg);
+  max-width: 600px;
+  width: 100%;
+  padding: 24px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: var(--red);
+}
+
