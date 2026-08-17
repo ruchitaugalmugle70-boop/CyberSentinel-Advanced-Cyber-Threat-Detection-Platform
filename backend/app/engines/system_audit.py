@@ -11,7 +11,7 @@ from typing import Dict, Any, List
 class SystemAuditEngine:
     """Engine for performing system security posture audits."""
 
-    def perform_audit((self) -> Dict[str, Any]:
+    def perform_audit(self) -> Dict[str, Any]:
         system_info = {
             "os": platform.system(),
             "release": platform.release(),
