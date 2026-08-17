@@ -6,9 +6,14 @@ const navItems = [
   { id: 'sqli', icon: '💉', label: 'SQL Injection', badge: null },
   { id: 'repo', icon: '📦', label: 'Repo Security', badge: null },
   { id: 'network', icon: '🌐', label: 'Network Monitor', badge: null },
+  { id: 'mitre', icon: '🎯', label: 'MITRE ATT&CK', badge: 'NEW' },
+  { id: 'compliance', icon: '📜', label: 'STIX Exporter', badge: 'NEW' },
+  { id: 'yara', icon: '🔬', label: 'YARA Sandbox', badge: 'NEW' },
+  { id: 'playbooks', icon: '⚡', label: 'Playbooks', badge: 'NEW' },
 ];
 
 const bottomNavItems = [
+  { id: 'system_audit', icon: '🛡️', label: 'System Audit', badge: null },
   { id: 'alerts', icon: '🔔', label: 'Alert History', badge: '12' },
   { id: 'settings', icon: '⚙️', label: 'Settings', badge: null },
 ];
@@ -20,12 +25,12 @@ export default function Sidebar({ activeTab, onTabChange }) {
         <div className="brand-icon">🛡️</div>
         <div>
           <h1>CYBERSENTINEL</h1>
-          <div className="brand-tag">Threat Detection v1.0</div>
+          <div className="brand-tag">Threat Defense Suite v2.0</div>
         </div>
       </div>
 
       <nav className="sidebar-nav">
-        <div className="nav-section-label">Main Modules</div>
+        <div className="nav-section-label">Defense Modules</div>
         {navItems.map((item) => (
           <div
             key={item.id}
@@ -38,7 +43,7 @@ export default function Sidebar({ activeTab, onTabChange }) {
           </div>
         ))}
 
-        <div className="nav-section-label">System</div>
+        <div className="nav-section-label font-bold text-xs uppercase tracking-wider text-muted mt-4 mb-2">Platform Administration</div>
         {bottomNavItems.map((item) => (
           <div
             key={item.id}
@@ -56,8 +61,8 @@ export default function Sidebar({ activeTab, onTabChange }) {
         <div className="system-status">
           <div className="status-dot"></div>
           <div>
-            <div className="status-text">All Systems Online</div>
-            <div className="status-sub">4 engines active</div>
+            <div className="status-text">All Engines Active</div>
+            <div className="status-sub">9 defense modules active</div>
           </div>
         </div>
       </div>
