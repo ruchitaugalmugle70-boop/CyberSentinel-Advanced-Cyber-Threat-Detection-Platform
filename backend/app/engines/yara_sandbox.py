@@ -19,7 +19,7 @@ DEFAULT_YARA_RULES = [
         "rule_name": "SQLi_Boolean_Bypass_Probe",
         "author": "CyberSentinel Labs",
         "description": "Detects classic OR 1=1 boolean bypass probes in request payloads.",
-        "pattern": r"(?i)(\'|\")\s*(or|and)\s*(\'|\"|\d+)\s*=\s*(\'|\"|\d+)",
+        "pattern": r"(?i)(?:'|\")?\s*(?:or|and)\s+(?:'|\")?[\w\d]+(?:'|\")?\s*=\s*(?:'|\")?[\w\d]+(?:'|\")?",
         "severity": "HIGH"
     },
     {
