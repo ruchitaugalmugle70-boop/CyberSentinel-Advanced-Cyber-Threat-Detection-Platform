@@ -86,4 +86,55 @@ export const api = {
     const res = await fetch(`${API_BASE}/alerts/stats`);
     return await res.json();
   },
+
+  // MITRE ATT&CK Matrix
+  getMitreMatrix: async () => {
+    const res = await fetch(`${API_BASE}/mitre/matrix`);
+    return await res.json();
+  },
+
+  // Compliance & STIX Exporter
+  getComplianceReport: async (summary) => {
+    const res = await fetch(`${API_BASE}/compliance/report`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(summary),
+    });
+    return await res.json();
+  },
+
+  exportStixBundle: async (findings) => {
+    const res = await fetch(`${API_BASE}/compliance/stix`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(findings),
+    });
+    return await res.json();
+  },
+
+  // YARA Sandbox
+  scanYaraPayload: async (payload) => {
+    const res = await fetch(`${API_BASE}/yara/scan`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ payload }),
+    });
+    return await res.json();
+  },
+
+  // Incident Response Playbooks
+  generatePlaybook: async (category, targetIp, processName, c2Domain) => {
+    const res = await fetch(`${API_BASE}/playbooks/generate`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ category, target_ip: targetIp, process_name: processName, c2_domain: c2Domain }),
+    });
+    return await res.json();
+  },
+
+  // System Security Audit
+  getSystemAudit: async () => {
+    const res = await fetch(`${API_BASE}/system-audit/check`);
+    return await res.json();
+  }
 };
